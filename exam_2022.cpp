@@ -26,7 +26,7 @@ void zrtowan (std::list<double> &l1) {
 
 // c i)
 
-auto occurence(const std::list<int> &l1, const int &x) {
+int occurence(const std::list<int> &l1, const int &x) {
 	return std::count(l1.cbegin(),l1.cend(),x);
 }
 
@@ -124,7 +124,7 @@ events.push_back(new daily_event("Take medication"));
 events.push_back(new annual_event("Birthday", 14, 2));
 
 
-for (event* e : events) {
+for (event& e : events) {
     if (e->on_day(day, month, year)) {
         std::cout << e->description() << std::endl;
     }
